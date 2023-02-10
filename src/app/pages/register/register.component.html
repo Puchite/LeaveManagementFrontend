@@ -1,0 +1,73 @@
+<nz-layout class="content">
+  <div class="logo">
+    <h1> Register </h1>
+  </div>
+
+  <div class="form">
+    <form nz-form [formGroup]="validateForm" class="register-form" (ngSubmit)="submitForm()">
+      <div nz-row class="content-row">
+        <div nz-col [nzXs]="24" [nzSm]="24">
+          <nz-form-item>
+            <nz-form-label [nzSm]="6">Username</nz-form-label>
+            <nz-form-control [nzSm]="12" nzErrorTip="Please input your username!">
+              <nz-input-group>
+                <input type="text" nz-input formControlName="userName" placeholder="Username" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzXs]="24" [nzSm]="24">
+          <nz-form-item>
+            <nz-form-label [nzSm]="6">Name</nz-form-label>
+            <nz-form-control [nzSm]="12" nzErrorTip="Please input your name!">
+              <nz-input-group>
+                <input type="text" nz-input formControlName="name" placeholder="Name" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzXs]="24" [nzSm]="24">
+          <nz-form-item>
+            <nz-form-label [nzSm]="6">Email</nz-form-label>
+            <nz-form-control [nzSm]="12" nzErrorTip="Please input your email or email must be correct">
+              <nz-input-group>
+                <input type="email" nz-input formControlName="email" placeholder="Email" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzXs]="24" [nzSm]="24">
+          <nz-form-item>
+            <nz-form-label [nzSm]="6">Password</nz-form-label>
+            <nz-form-control [nzSm]="12" nzErrorTip="Please input your Password!">
+              <nz-input-group>
+                <input type="password" nz-input formControlName="password" placeholder="Password" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+
+        <div nz-col [nzXs]="24" [nzSm]="24">
+          <nz-form-item>
+            <nz-form-label [nzSm]="6">Confirm Password</nz-form-label>
+            <nz-form-control [nzSm]="12" nzErrorTip="Please input your Password!">
+              <nz-input-group>
+                <input type="password" nz-input formControlName="confirmPassword" placeholder="Confirm Password" />
+                <span *ngIf="!isValidPassword" style="color: red;"> Password must be the same! </span>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+
+      <button nz-button class="register-form-button register-form-margin" [nzType]="'primary'"
+        (click)="register()">Submit</button>
+
+    </form>
+  </div>
+
+</nz-layout>

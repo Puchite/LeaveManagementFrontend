@@ -1,0 +1,28 @@
+.logo{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  background-color: white;
+}
+
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}

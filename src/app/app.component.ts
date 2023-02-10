@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from 'vue-router';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'leave_management';
+  isCollapsed: boolean = false;
+  isLogin: boolean = false;
+  constructor(
+    public authService: AuthService,
+  ) {
+
+  }
+
+  ngOnInit(): void {
+
+  }
 }

@@ -1,0 +1,48 @@
+<nz-layout class="content">
+  <nz-collapse>
+    <nz-collapse-panel [nzHeader]="'Leave'" [nzActive]="true">
+      <div class="form">
+        <!-- <form nz-form [formGroup]="validateForm" class="register-form" (ngSubmit)="submitForm()"> -->
+        <div nz-row class="content-row">
+          <div nz-col [nzXs]="24" [nzSm]="24">
+            <nz-form-item>
+              <nz-form-label [nzSm]="8">Leave Quota</nz-form-label>
+              <nz-form-control [nzSm]="12">
+                <input nz-input placeholder="Quota" [(ngModel)]="leaveQuotaNumber" [disabled]="true" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <div nz-col [nzXs]="24" [nzSm]="24">
+            <nz-form-item>
+              <nz-form-label [nzSm]="8">Select Date</nz-form-label>
+              <nz-form-control [nzSm]="12">
+                <nz-range-picker [(ngModel)]="date" (ngModelChange)="onChangeDate($event)"
+                  [nzDisabledDate]="disabledDate"></nz-range-picker>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+        </div>
+
+        <!-- </form> -->
+      </div>
+
+      <div style="display: flex; justify-content: center;">
+        <div nz-row class="content-row" [nzJustify]="'center'">
+          <div nz-col [nzXs]="24" [nzSm]="24">
+            <button nz-button class="register-form-button register-form-margin" [nzType]="'primary'"
+              (click)="submitForm()" [disabled]="disabledSubmit">
+              Submit
+            </button>
+          </div>
+
+          <div nz-col [nzXs]="24" [nzSm]="24">
+            <span *ngIf="disabledSubmit" style="color: red;">Your leave quota is reach limit!</span>
+          </div>
+        </div>
+      </div>
+
+    </nz-collapse-panel>
+  </nz-collapse>
+</nz-layout>

@@ -1,0 +1,28 @@
+.logo{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  background-color: white;
+}
+
+.register-form {
+  max-width: 500px;
+}
+
+.register-form-margin {
+  margin-bottom: 16px;
+}
+
+.register-form-forgot {
+  float: right;
+}
+
+.register-form-button {
+  width: 100%;
+}

@@ -1,0 +1,27 @@
+<nz-layout class="content">
+  <nz-spin [nzSpinning]="isLoading" nzTip="Loading..." [nzSize]="'large'">
+    <nz-collapse>
+      <nz-collapse-panel [nzHeader]="'Leave Data'" [nzActive]="true">
+        <nz-table *ngIf="!isLoading" #Table nzBordered class="table-log" [nzShowPagination]="true" [nzPageSize]="10"
+          [nzShowSizeChanger]="true" [nzPageSizeOptions]="[10, 20, 50, 100]">
+          <thead>
+            <tr>
+              <th nzWidth="60px">Action Date</th>
+              <th nzWidth="100px">Name</th>
+              <th nzWidth="100px">From</th>
+              <th nzWidth="100px">To</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of leaveData">
+              <td>{{data.createdAt | date:'dd/MM/YYYY'}}</td>
+              <td>{{data.name}}</td>
+              <td>{{data.leaveDateFrom | date:'dd/MM/YYYY'}}</td>
+              <td>{{data.leaveDateTo | date:'dd/MM/YYYY'}}</td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </nz-spin>
+</nz-layout>
